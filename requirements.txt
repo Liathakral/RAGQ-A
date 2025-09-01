@@ -1,0 +1,12 @@
+faiss-cpu
+langchain-openai
+langchain
+python-dotenv
+langchain-community
+langchain-core
+streamlit
+langchain_ollama
+langchain_groq
+langchain_huggingface
+sentence-transformers
+pypdf
