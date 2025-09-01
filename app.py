@@ -11,8 +11,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 import openai
 from langchain_huggingface import HuggingFaceEmbeddings
-import torch
-torch.set_default_device("cpu")
+
+
 
 from dotenv import load_dotenv
 load_dotenv()

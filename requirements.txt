@@ -8,6 +8,5 @@ streamlit
 langchain_ollama
 langchain_groq
 langchain_huggingface
-torch==2.2.1
-transformers==4.41.2
+sentence-transformers==2.7.0  
 pypdf
