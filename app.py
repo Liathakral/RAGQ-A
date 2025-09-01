@@ -25,7 +25,7 @@ groq_api_key=os.getenv("GROQ_API_KEY")
 os.environ['HF_TOKEN']=os.getenv("HF_TOKEN")
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-llm=ChatGroq(groq_api_key=groq_api_key,model_name="Llama3-8b-8192")
+llm=ChatGroq(groq_api_key=groq_api_key,model_name="llama3-70b-8192")
 
 prompt=ChatPromptTemplate.from_template(
     """
