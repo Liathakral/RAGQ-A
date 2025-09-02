@@ -52,16 +52,18 @@ st.title("RAG Document Q&A With Groq And Lama3")
 
 user_prompt=st.text_input("Enter your query from the research paper")
 
-if st.button("Document Embedding"):
+if st.button("GENERATE ANSWER"):
     create_vector_embedding()
     st.write("Vector Database is ready")
 
 import time
-
 if user_prompt:
-    document_chain=create_stuff_documents_chain(llm,prompt)
-    retriever=st.session_state.vectors.as_retriever()
-    retrieval_chain=create_retrieval_chain(retriever,document_chain)
+    if "vectors" not in st.session_state:
+        st.warning("Please click 'GENERATE ANSWER' first to build the vector database.")
+    else:
+        document_chain = create_stuff_documents_chain(llm, prompt)
+        retriever = st.session_state.vectors.as_retriever()
+        retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
     start=time.process_time()
     response=retrieval_chain.invoke({'input':user_prompt})
